@@ -8,8 +8,10 @@ sudo docker-compose up -d --remove-orphans
 sudo docker-compose up -d --build
 sudo docker-compose -f docker-compose-prod.yml up -d --build
 sudo docker-compose up -d
-sudo docker-compose exec web python manage.py startapp accounts
-sudo docker-compose exec web python manage.py makemigrations books
+python manage.py startapp accounts
+sudo docker-compose exec web python manage.py makemigrations accounts
+python manage.py startapp gallery
+sudo docker-compose exec web python manage.py makemigrations gallery
 sudo docker-compose exec web python manage.py migrate
 sudo docker-compose exec web python manage.py createsuperuser admin stqhJQmh
 sudo docker-compose exec web python manage.py test
