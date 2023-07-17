@@ -1,6 +1,7 @@
 python-dotenv
 Django
-gunicorn
+uvicorn
 psycopg2
 environs
+django-crispy-forms
 
